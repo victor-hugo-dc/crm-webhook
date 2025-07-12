@@ -1,0 +1,17 @@
+# Exclude Git-related files
+.git/
+.gitignore
+
+# Exclude locally installed Python dependencies (managed by Dockerfile)
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Exclude local environment files (never commit secrets!)
+.env
+.flaskenv
+
+# Exclude build artifacts or temporary files
+*.egg-info/
+.pytest_cache/
