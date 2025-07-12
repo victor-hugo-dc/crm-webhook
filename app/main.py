@@ -5,6 +5,13 @@ import requests
 from pydantic import BaseModel
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[os.getenv("BASE_URL"), "https://framer.com"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class WebhookData(BaseModel):
     Name: str
