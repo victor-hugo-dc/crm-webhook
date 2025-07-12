@@ -66,6 +66,7 @@ async def webhook_endpoint(data: WebhookData): # Use the Pydantic model for requ
             frappe_response.raise_for_status() # Raise an exception for HTTP errors
 
         if DISCORD_WEBHOOK_URL:
+            name = f"{first_name} {last_name}"
             discord_payload = construct_response(name, email, phone)
             discord_response = requests.post(
                 DISCORD_WEBHOOK_URL,
